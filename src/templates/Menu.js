@@ -44,7 +44,14 @@ const activeLinkStyle = {
   color: 'white',
 }
 
-const Menu = () => {
+const Menu = ({ data }) => {
+  const allpages = data.map(e => (
+    <li key={e.id}>
+      <Link to={'/' + e.slug} activeStyle={activeLinkStyle}>
+        {e.title}
+      </Link>
+    </li>
+  ))
   return (
     <Header>
       <Nav>
@@ -54,11 +61,7 @@ const Menu = () => {
               Home
             </Link>
           </li>
-          <li>
-            <Link to="/about/" activeStyle={activeLinkStyle}>
-              About
-            </Link>
-          </li>
+          {allpages}
           <li>
             <Link to="/contact/" activeStyle={activeLinkStyle}>
               Contact

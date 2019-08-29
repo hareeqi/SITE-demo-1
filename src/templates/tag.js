@@ -10,6 +10,7 @@ import CardList from '../components/CardList'
 import PageTitle from '../components/PageTitle'
 import Pagination from '../components/Pagination'
 import Container from '../components/Container'
+import Menu from './Menu'
 
 const TagTemplate = ({ data, pageContext }) => {
   const posts = orderBy(
@@ -28,6 +29,7 @@ const TagTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
+      <Menu data={data.allContentfulPage.nodes} />
       {isFirstPage ? (
         <Helmet>
           <title>{`Tag: ${title} - ${config.siteTitle}`}</title>
@@ -91,6 +93,13 @@ export const query = graphql`
             excerpt(pruneLength: 80)
           }
         }
+      }
+    }
+    allContentfulPage {
+      nodes {
+        id
+        title
+        slug
       }
     }
   }

@@ -8,6 +8,7 @@ import Container from '../components/Container'
 import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
 import config from '../utils/siteConfig'
+import Menu from './Menu'
 
 const Index = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges
@@ -17,6 +18,7 @@ const Index = ({ data, pageContext }) => {
 
   return (
     <Layout>
+      <Menu data={data.allContentfulPage.nodes} />
       <SEO />
       {!isFirstPage && (
         <Helmet>
@@ -46,6 +48,13 @@ const Index = ({ data, pageContext }) => {
 
 export const query = graphql`
   query($skip: Int!, $limit: Int!) {
+    allContentfulPage {
+      nodes {
+        id
+        title
+        slug
+      }
+    }
     allContentfulPost(
       sort: { fields: [publishDate], order: DESC }
       limit: $limit

@@ -10,6 +10,7 @@ import TagList from '../components/TagList'
 import PostLinks from '../components/PostLinks'
 import PostDetails from '../components/PostDetails'
 import SEO from '../components/SEO'
+import Menu from './Menu'
 
 const PostTemplate = ({ data, pageContext }) => {
   const {
@@ -27,6 +28,7 @@ const PostTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
+      <Menu data={data.allContentfulPage.nodes} />
       <Helmet>
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>
@@ -81,6 +83,13 @@ export const query = graphql`
           html
           excerpt(pruneLength: 320)
         }
+      }
+    }
+    allContentfulPage {
+      nodes {
+        id
+        title
+        slug
       }
     }
   }

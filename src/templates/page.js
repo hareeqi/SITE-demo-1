@@ -7,6 +7,7 @@ import Container from '../components/Container'
 import PageTitle from '../components/PageTitle'
 import PageBody from '../components/PageBody'
 import SEO from '../components/SEO'
+import Menu from './Menu'
 
 const PageTemplate = ({ data }) => {
   const { title, slug, body } = data.contentfulPage
@@ -14,6 +15,7 @@ const PageTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <Menu data={data.allContentfulPage.nodes} />
       <Helmet>
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>
@@ -42,6 +44,13 @@ export const query = graphql`
           html
           excerpt(pruneLength: 320)
         }
+      }
+    }
+    allContentfulPage {
+      nodes {
+        id
+        title
+        slug
       }
     }
   }
