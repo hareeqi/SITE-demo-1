@@ -53,11 +53,15 @@
     "lint:css": "stylelint 'src/**/*.js'",
     "check-pretty": "prettier --list-different {,src/**/}*.{js,jsx,json,css,scss}",
     "format": "prettier --write \"src/**/*.js\"",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "node ./bin/deploy",
+    "host": "npm run deploy && firebase deploy --only hosting --project site-sa-demo-1 --token "
   },
   "devDependencies": {
+    "dotenv": "^8.1.0",
     "eslint": "^5.16.0",
     "eslint-config-gatsby-standard": "^2.2.0",
+    "firebase-tools": "^7.3.0",
     "prettier": "^1.18.2",
     "stylelint": "10.1.0",
     "stylelint-config-prettier": "^5.2.0",
