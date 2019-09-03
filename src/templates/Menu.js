@@ -53,7 +53,8 @@ const Menu = ({ data }) => {
   return (
     <Header>
       <Nav>
-        <Link to="/" style={{ justifyContent: 'center', marginBottom: '30px' }}>
+        <Link to="/" style={{ justifyContent: 'center', height: '100px' }}>
+          <div></div>
           <img src="/logos/pif.png" alt="pif logo" style={{ width: '300px' }} />
         </Link>
         <ul>
