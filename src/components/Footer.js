@@ -55,7 +55,7 @@ const Footer = () => (
           <img
             src="/logos/site-logo.svg"
             style={{ width: '50px' }}
-            alt="Powered by Contentful"
+            alt="Powered by site"
           />
         </a>
       </Item>

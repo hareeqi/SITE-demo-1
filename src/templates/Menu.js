@@ -54,7 +54,7 @@ const Menu = ({ data }) => {
     <Header>
       <Nav>
         <Link to="/" style={{ justifyContent: 'center', marginBottom: '30px' }}>
-          <img src="/logos/pif.png" style={{ width: '300px' }} />
+          <img src="/logos/pif.png" alt="pif logo" style={{ width: '300px' }} />
         </Link>
         <ul>
           {allpages}
