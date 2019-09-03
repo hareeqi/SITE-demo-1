@@ -12,20 +12,18 @@ const Nav = styled.nav`
   max-width: ${props => props.theme.sizes.maxWidth};
   margin: 0 auto;
   padding: 0 1.5em;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   ul {
     display: flex;
-    justify-content: space-between;
   }
 
   li {
     display: inline-block;
     margin-left: 1em;
-    &:first-child {
-      position: relative;
-      margin: 0;
-      flex-basis: 100%;
-    }
+    margin-right: 1em;
   }
 
   a {
@@ -55,12 +53,10 @@ const Menu = ({ data }) => {
   return (
     <Header>
       <Nav>
+        <Link to="/" style={{ justifyContent: 'center', marginBottom: '30px' }}>
+          <img src="/logos/pif.png" style={{ width: '300px' }} />
+        </Link>
         <ul>
-          <li>
-            <Link to="/" activeStyle={activeLinkStyle}>
-              Home
-            </Link>
-          </li>
           {allpages}
           <li>
             <Link to="/contact/" activeStyle={activeLinkStyle}>

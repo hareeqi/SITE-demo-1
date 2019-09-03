@@ -22,13 +22,14 @@ const List = styled.ul`
 `
 
 const Item = styled.li`
-  display: inline-block;
+  display: flex;
   padding: 0.25em 0;
   width: 100%;
   @media screen and (min-width: ${props => props.theme.responsive.small}) {
     width: auto;
   }
   a {
+    margin-left: 6px;
     font-weight: 600;
     transition: all 0.2s;
     color: ${props => props.theme.colors.base};
@@ -45,35 +46,20 @@ const Footer = () => (
   <Wrapper>
     <List>
       <Item>
+        Powered By
         <a
-          href="https://www.contentful.com/"
+          href="https://site.sa/"
           rel="nofollow noopener noreferrer"
           target="_blank"
         >
           <img
-            src="https://images.ctfassets.net/fo9twyrwpveg/44baP9Gtm8qE2Umm8CQwQk/c43325463d1cb5db2ef97fca0788ea55/PoweredByContentful_LightBackground.svg"
-            style={{ width: '100px' }}
+            src="/logos/site-logo.svg"
+            style={{ width: '50px' }}
             alt="Powered by Contentful"
           />
         </a>
       </Item>
-      <Item>
-        <a
-          href="https://github.com/ryanwiemer/gatsby-starter-gcn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          gatsby-starter-gcn
-        </a>{' '}
-        by{' '}
-        <a
-          href="https://github.com/ryanwiemer"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @ryanwiemer
-        </a>
-      </Item>
+      <Item>Copyright © 2019 SITE CLOUD</Item>
     </List>
   </Wrapper>
 )
